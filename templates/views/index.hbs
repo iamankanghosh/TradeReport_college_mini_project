@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+</head>
+<link rel="stylesheet" type="text/css" href="css/style.css">
+<title>Trade Report</title>
+    <link rel = "icon" href = "image/iconlogo.jpg" type = "image/x-icon">
+</head>
+
+<body>
+  {{>ticker}}
+  {{>navbar}}
+  <div class="col-md-12 text-center">
+    <h1><b>Become a better</b></h1>
+    <h2><b>Investor & Trader</b></h2>
+    
+  </div>
+
+  <div>
+    <div class="row">
+      <div class="col-6 ">
+        <div class="container-fluid border">
+          <h2><b>Top Gainers of Nifty 50 </b></h2>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">LTP</th>
+                <th scope="col">chg%</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each gainer}}
+                <tr>
+                  <th scope="row">{{no}}</th>
+                  <td>{{name}}</td>
+                  <td>{{ltp}}</td>
+                  <td>{{chg}}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="container-fluid border">
+          <h2><b>Top Loosers of Nifty 50</b></h2>
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">LTP</th>
+                <th scope="col">chg%</th>
+              </tr>
+            </thead>
+            <tbody>
+              {{#each loser}}
+                <tr>
+                  <th scope="row">{{no}}</th>
+                  <td>{{name}}</td>
+                  <td>{{ltp}}</td>
+                  <td>{{chg}}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  <div>
+    <div class="row">
+      <div class="col-3 ">
+      </div>
+      <div class="col-6">
+        <h2><b>Most Active</b></h2>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+                <th scope="col">No</th>
+                <th scope="col">Name</th>
+                <th scope="col">LTP</th>
+                <th scope="col">chg%</th>
+            </tr>
+          </thead>
+          <tbody>
+              {{#each mostactive}}
+                <tr>
+                  <th scope="row">{{no}}</th>
+                  <td>{{name}}</td>
+                  <td>{{ltp}}</td>
+                  <td>{{chg}}</td>
+                </tr>
+              {{/each}}
+            </tbody>
+        </table>
+      </div>
+      <div class="col-3">
+      </div>
+  </div>
+  
+
+   <div class="row">
+        <div class="col-2 ">
+
+        </div>
+        <div class="col-6 ">
+            <div class="container-fluid">
+              <!-- TradingView Widget BEGIN -->
+<div class="tradingview-widget-container">
+  <div class="tradingview-widget-container__widget"></div>
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-timeline.js" async>
+  {
+  "feedMode": "all_symbols",
+  "colorTheme": "light",
+  "isTransparent": false,
+  "displayMode": "regular",
+  "width": "880",
+  "height": "830",
+  "locale": "in"
+}
+  </script>
+</div>
+<!-- TradingView Widget END -->
+            </div>
+        </div>
+        <div class="col-2 ">
+            
+        </div>
+  </div>
+
+  {{!-- {{>footer}} --}}
+
+
+
+
+
+  <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade Report</title>
+    <link rel = "icon" href = "image/iconlogo.jpg" type = "image/x-icon">
+    <link rel="stylesheet" href="css/logincss.css">
+    <script src="main.js"></script>
+</head>
+<body>
+    {{>ticker}}
+  <br>
+  <br>
+      <div class="cont">
+          <div class="form sign-in">
+              <h2>Welcome to Trade Report</h2>
+                <form action="/login" method="POST">
+                <label for="username" >username</label>
+                <input type="text" id="username" name="usernamelog" placeholder="type your username" required><br>
+                <label for="password">password</label>
+                <input type="text" id="password" name="passwordlog" placeholder="type your password" required><br>
+                <button class="submit "type="submit" value="login" >LogIn</button>
+              </form>
+          </div>
+          <div class="sub-cont">
+              <div class="img">
+                  <div class="img__text m--up">
+                   
+                      <h3>Don't have an account? Please Sign up!<h3>
+                  </div>
+                  <div class="img__text m--in">
+                  
+                      <h3>If you already has an account, just sign in.<h3>
+                  </div>
+                  <div class="img__btn">
+                      <span class="m--up">Sign Up</span>
+                      <span class="m--in">Sign In</span>
+                  </div>
+              </div>
+              <div class="form sign-up">
+                  <h2>Create your Account</h2>
+                  <form action="/register" method="POST">
+                    <label for="fname">First name:</label>
+                    <input type="text" id="fname" name="fname" placeholder="John" required>
+                    <label for="lname">Last name:</label>
+                    <input type="text" id="lname" name="lname" placeholder="Doe" required>
+                    <label for="password">password</label>
+                    <input type="text" id="password" name="password" placeholder="abcd1234" required>
+                    <label for="username">username</label>
+                    <input type="text" id="username" name="username" placeholder="Doe" required>
+                    <button class="submit "type="submit" value="signin" >Sign In </button>
+                  </form> 
+              </div>
+          </div>
+      </div>
+  
+      <script>
+          document.querySelector('.img__btn').addEventListener('click', function() {
+              document.querySelector('.cont').classList.toggle('s--signup');
+          });
+      </script>
+      <script src="js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+    crossorigin="anonymous"></script>
+</body>
+</html>
